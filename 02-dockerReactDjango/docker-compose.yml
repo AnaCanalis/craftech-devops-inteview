@@ -5,7 +5,7 @@ services:
       image: django-back
       build: 
         context: .
-        dockerfile: Dockerfile-back
+        dockerfile: Dockerfile-backend
       expose:
         - 8000
       environment:
@@ -25,7 +25,7 @@ services:
       image: react-front
       build: 
         context: .
-        dockerfile: Dockerfile-front
+        dockerfile: Dockerfile-frontend
       environment: 
         - 3000:3000
       expose:

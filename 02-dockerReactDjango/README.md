@@ -1,12 +1,12 @@
-#Craftech Technical Interview
-#Steps to dockerize a Django + React.js application 
+# Craftech Technical Interview
+# Steps to dockerize a Django + React.js application 
 
 Instructions to compile and deploy an application on the pc.  
 It was compipled and deployend on a Virtual Machine with Ubuntu. 
 
 Note: the docker-compose.yml file is not finished yet. At the moment, backend and frontend can be run separately.
 
-##Requirements
+## Requirements
 
 To run this app you need to install Docker and docker-compose. If you have those tools in your machine, please go to the next section.
 
@@ -74,7 +74,7 @@ _Install Docker-compose_
 ```
 sudo su
 ```
-* Copy and paste. For more information click [HERE] (https://docs.docker.com/compose/install/)
+* Copy and paste. (For more information you can check this link https://docs.docker.com/compose/install/)
 ```
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
@@ -124,7 +124,7 @@ _For build and run this application it is important that you use the same Docker
 
 Copy and paste the following commands one by one in the Terminal 
 
-###Frontend
+### Frontend
 ```
 docker build -t react-front -f Dockerfile-frontend .
 ```
@@ -133,7 +133,7 @@ docker -d -ti -p 3000:3000 react-front
 ```
 Your image is built and running on a container, you can check enter it in your browser https://localhost:3000
 
-###Backend
+### Backend
 ```
 docker build -t django-back -f Dockerfile-backend .
 ```

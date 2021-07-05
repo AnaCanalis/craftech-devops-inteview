@@ -1,0 +1,47 @@
+version: '3'
+services:
+    django-back:
+      container_name: backend
+      image: django-back
+      build: 
+        context: .
+        dockerfile: Dockerfile-backend
+      expose:
+        - 8000
+      environment:
+        API_HOST: "http://localhost:4000/"
+        APP_SERVER_PORT: 8000 
+      ports:
+        - 8000:8000
+      stdin_open: true
+      tty: true
+      volumes:
+      - ./backend:/app/backend 
+      networks:
+        - craftech-net
+      command: python3 manage.py runserver 0.0.0.0:8000
+    react-front:
+      container_name: frontend
+      image: react-front
+      build: 
+        context: .
+        dockerfile: Dockerfile-frontend
+      environment: 
+        - 3000:3000
+      expose:
+        - 3000
+      ports: 
+        - 3000:3000
+      volumes:
+        - ./frontend:/app/frontend
+      links:
+        - django-back
+      networks:
+        - craftech-net
+      command: npm run start
+      depends_on:
+       - django-back
+    
+networks:
+  craftech-net:
+    driver: bridge

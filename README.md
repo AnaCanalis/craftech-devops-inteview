@@ -1,2 +1,5 @@
-# craftech-devops-inteview
-Craftech technical interview. AWS Network Diagram and Dockerize a Django + React.js application
+# craftech-devops-inteview  
+Craftech technical interview. 
+This reporitory contains:  
+* AWS Network Diagram 
+* Dockerize a Django + React.js application.  
